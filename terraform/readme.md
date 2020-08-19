@@ -27,9 +27,11 @@ Terraform will create the following:
 - Create a ECS service
 - Create a ECS tasks passing in database creditials
 
+The application will be deployed into AWS Fargate to run the container. The containers will have access to the Aurora DB. The load balancer will provide access to the container ports 3000 via port 80 publicly.
+
 ## Database
 
-The database will need to be initally created by running a task with the `updatedb -s` command.
+The database will need to be initally created by running a task with the `updatedb` command.
 
 ## Accessing the app
 

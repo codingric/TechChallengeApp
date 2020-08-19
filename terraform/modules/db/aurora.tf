@@ -9,7 +9,7 @@ resource "aws_rds_cluster" "postgresql" {
   preferred_backup_window = "07:00-09:00"
   vpc_security_group_ids  = [aws_security_group.aurora.id]
   db_subnet_group_name    = aws_db_subnet_group.default.name
-  engine_version          = "9.6.8"
+  //engine_version          = "9.6.8"
 }
 
 resource "aws_rds_cluster_instance" "cluster_instances" {

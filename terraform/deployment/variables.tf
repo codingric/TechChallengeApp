@@ -28,7 +28,7 @@ variable "db_user" {
 }
 
 variable "db_password" {
-  default = "servian"
+  default = "serviantest"
 }
 
 variable "db_name" {
