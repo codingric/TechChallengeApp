@@ -22,3 +22,15 @@ variable "whitelisted_cidr" {
 variable "image_repository" {
   default = "codingric/servian"
 }
+
+variable "db_user" {
+  default = "servian"
+}
+
+variable "db_password" {
+  default = "servian"
+}
+
+variable "db_name" {
+  default = "servian"
+}

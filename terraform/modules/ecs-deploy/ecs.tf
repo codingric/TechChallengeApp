@@ -1,5 +1,6 @@
 # ecs.tf
 
+
 resource "aws_ecs_cluster" "main" {
   name = "${var.app_name}-cluster"
 
@@ -20,6 +21,7 @@ data "template_file" "app" {
     aws_region     = var.aws_region
     app_name       = var.app_name
     log_group      = "/ecs/${var.app_name}"
+    env_vars       = jsonencode(var.environment)
   }
 }
 

@@ -8,6 +8,10 @@ variable "tags" {
   default     = {}
 }
 
+variable "environment" {
+  default = {}
+}
+
 variable "allowed_cidr_blocks" {
   #default = ["0.0.0.0/0"]
 }

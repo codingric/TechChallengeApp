@@ -42,5 +42,25 @@ module "deployment" {
   aws_region          = "ap-southeast-2"
   allowed_cidr_blocks = [var.whitelisted_cidr]
 
+  environment = [
+    { name = "DBNAME", value = module.db.db_name },
+    { name = "DBUSER", value = module.db.db_user },
+    { name = "DBPASSWORD", value = module.db.db_password },
+    { name = "DBHOST", value = module.db.db_host }
+  ]
+
   tags = var.tags
+}
+
+module "db" {
+  source = "../modules/db"
+
+  app_name = var.app_name
+
+  db_name     = var.db_name
+  db_user     = var.db_user
+  db_password = var.db_password
+
+  vpc     = module.vpc.vpc
+  subnets = module.vpc.private_subnets
 }
